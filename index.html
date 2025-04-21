@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How Much Home Can You Afford?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <script src="script.js" defer></script>
+  <div class="calculator-container">
+    <h2>💰 How Much Home Can You Afford?</h2>
+
+    <label>Monthly Before-Tax Income ($):</label>
+    <input type="number" id="income" />
+
+    <label>Monthly Debt Obligations ($):</label>
+    <input type="number" id="debt" />
+
+    <label>Condo Fees (Monthly):</label>
+    <input type="number" id="condoFees" placeholder="Enter 0 if not a condo" />
+
+    <label>Estimated Heating Costs (Yearly):</label>
+    <input type="number" id="heating" value="2000" />
+
+    <label>Mill Rate (Auto-set for Calgary 2025):</label>
+    <input type="number" id="millRate" value="0.0061803" readonly />
+
+    <label>Down Payment Option:</label>
+    <select id="downPayment">
+      <option value="5">5% on first $500k + 10% after</option>
+      <option value="10">10%</option>
+      <option value="15">15%</option>
+      <option value="20">20%</option>
+      <option value="25">25%</option>
+      <option value="30">30%</option>
+      <option value="35">35%</option>
+    </select>
+
+    <label>Interest Rate (%):</label>
+    <input type="number" step="0.01" id="interestRate" />
+
+    <button class="submit-btn" onclick="calculateAffordability()">Calculate</button>
+    <button class="reset-btn" onclick="resetCalculator()">Start Over</button>
+
+    <div class="error" id="error"></div>
+
+    <label>Monthly Payment Estimate ($):</label>
+    <input type="text" id="resultPayment" readonly />
+
+    <label>Estimated Purchase Price ($):</label>
+    <input type="text" id="resultPrice" readonly />
+
+    <label>Down Payment ($):</label>
+    <input type="text" id="resultDown" readonly />
+
+    <label>Mortgage Default Insurance ($):</label>
+    <input type="text" id="resultInsurance" readonly />
+
+    <label>Total Mortgage with Insurance ($):</label>
+    <input type="text" id="resultTotalMortgage" readonly />
+
+    <div class="disclaimer">
+      <p><strong>Disclaimer:</strong> This calculator is a tool for informational purposes only and not a substitute for financial advice or pre-approval. GDS is calculated at 39%, TDS at 44% per standard lender guidelines. It includes mortgage principal and interest, estimated heating costs (defaulted to $2,000/year or ~$167/month), monthly condo fees (optional), and property taxes using the 2025 Calgary residential mill rate of 0.0061803. If you are purchasing a condo, please enter your monthly condo fees; otherwise, enter zero. Actual rates and approval will vary by lender and individual circumstances.</p>
+    </div>
+  </div>
+</body>
+</html>
